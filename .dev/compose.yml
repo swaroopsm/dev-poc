@@ -1,0 +1,10 @@
+services:
+  caddy:
+    image: caddy:2
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    extra_hosts:
+      - "host.lima.internal:${DEV_COLIMA_GATEWAY_ADDRESS}"

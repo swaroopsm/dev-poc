@@ -1,0 +1,9 @@
+caddy.local {
+	handle_path /rust* {
+		reverse_proxy host.lima.internal:8080
+	}
+
+	handle_path /go* {
+		reverse_proxy host.lima.internal:8081
+	}
+}
